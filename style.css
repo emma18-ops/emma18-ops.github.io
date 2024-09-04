@@ -1,6 +1,6 @@
 body {
     background: rgb(237, 5, 5);
-    color: rgb(233, 226, 226);
+    color: rgb(244, 238, 238);
     padding: 10px;
     font-family: arial;
 }
@@ -20,7 +20,7 @@ nav {
 h1 {
     display: flex;
     align-items: center;
-    color: rgb(249, 248, 248);
+    color: rgb(244, 234, 234);
     flex: 1;
     margin: 0;
 }
@@ -33,7 +33,7 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: #f3eded;
+    color: #f3e7e7;
 }
 
 /* main container area beneath menu */
@@ -55,7 +55,7 @@ main {
 
 /* portfolio styles */
 #interests {
-    border: 4px silver ridge;
+    border: 4px rgb(242, 7, 7) ridge;
     padding: 8px;
 }
 h2, h3 {

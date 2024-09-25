@@ -66,8 +66,11 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
-
-
+   var positionX = 0;
+   var points = 0;
+   var speed = 10;
+	
+     
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -75,7 +78,22 @@
 			turn it around! 
 			*/
 			function update() {
+				/* Your Function Call Here */
+				positionX = positionX + speed;
+				moveBoxTo(positionX);
 
+
+				if(positionX > boardWidth){
+					speed = speed *-1;
+				}
+				if (positionX < 0){
+					speed = speed + 3;
+				 }
+			
+             
+			 
+		     
+		 
 
 			};
 
@@ -85,8 +103,14 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-
-
+             positionX = 0;       
+			 changeBoxText(points);
+			if (speed > 0){
+                 speed = speed + 3;
+			}
+			else if (speed < 0){
+               speed = speed  - 3
+			}
 			};
 
 

@@ -50,7 +50,7 @@ $(document).ready(function () {
     circle.x = Math.random() * maXX + circleRadius;
     circle.y = Math.random() * maxY + circleRadius;
     circle.speedX = decideSpeed();
-    circle.speedY = desideSpeed();
+    circle.speedY = decideSpeed();
 
     return circle;
   }
@@ -83,7 +83,7 @@ $(document).ready(function () {
   //////////////////
 
   // this should move all of the circles
-  function circles(update) {
+  function circles(maxCircles) {
     // loop over the circles array. We use the maxCircles variable instead of circles.length
     // to make seeing issues in the debugger slightly easier (in practice, you should use
     // circles.length, but do NOT change it here)
@@ -114,7 +114,7 @@ $(document).ready(function () {
   // this bounces circles if they hit a wall
   function bounceCircle(circle) {
     // this bounces off the left wall
-    if (circle.x < 0) {
+    if (circle < 0) {
       circle.x -= circle.speedX;
       circle.speedX *= -1;
     }

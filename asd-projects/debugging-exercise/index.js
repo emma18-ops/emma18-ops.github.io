@@ -11,6 +11,8 @@ $(document).ready(function () {
   var boardHeight = $($board).height();
   var circles = [];
   var circleRadius = 10;
+  var maXX = [];
+
 
   //////////
   // startup
@@ -88,8 +90,8 @@ $(document).ready(function () {
     for (var i = 0; i < maxCircles; i++) {
       var circle = circles[j];
 
-      // move the circle
-      moveCircle(circle);
+      // move the circle 
+      moveCircle(circles);
 
       // bounce the circle, if it hits a wall
       bounceCircle(circle);

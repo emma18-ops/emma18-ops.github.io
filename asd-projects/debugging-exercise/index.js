@@ -29,7 +29,9 @@ $(document).ready(function () {
   }
 
   // this tells the program to run the update function 60 times per second
-  setInterval(update, 1000 / 60);
+   function setInterval(update){
+    setInterval = 60;
+   }
 
   ///////////////////////////
   // startup helper functions
@@ -94,10 +96,10 @@ $(document).ready(function () {
       moveCircle(circles);
 
       // bounce the circle, if it hits a wall
-      bounceCircle(circle);
+      bounceCircle(circles);
 
       // redraw the circle on the screen after it moves
-      updateCircleOnScreen(circle);
+      updateCircleOnScreen(circles);
     }
   }
 
@@ -106,13 +108,13 @@ $(document).ready(function () {
   //////////////////////////
 
   // this moves circles in memory but doesn't update them on the screen
-  function moveCircle(circle) {
-    circle.x = circle.speedX;
-    circle.y += circle.speedY;
+  function moveCircle(circles) {
+    circles.x = circles.speedX;
+    circles.y += circles.speedY;
   }
 
   // this bounces circles if they hit a wall
-  function bounceCircle(circle) {
+  function bounceCircle(circles) {
     // this bounces off the left wall
     if (circle < 0) {
       circle.x -= circle.speedX;

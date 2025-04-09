@@ -112,19 +112,19 @@ function moveSnake() {
   //column/row properties. 
   
   */
-  // for (var i = 0; i < snake.body; i++) {
-  //   var snakeSquare = "???";
+  for (var i = snake.body.length -1; i >= 1; i--) {
+    var snakeSquare = snake.body[i];
 
-  //   var nextSnakeSquare = "???";
-  //   var nextRow = "???";
-  //   var nextColumn = "???";
-  //   var nextDirection = "???";
+    var nextSnakeSquare = snake.body[i -1];
+    var nextRow = nextSnakeSquare.row
+    var nextColumn = nextSnakeSquare.column
+    var nextDirection = nextSnakeSquare.direction
 
-  //   snakeSquare.direction = nextDirection;
-  //   snakeSquare.row = nextRow;
-  //   snakeSquare.column = nextColumn;
-  //   repositionSquare(snakeSquare);
-  // }
+    snakeSquare.direction = nextDirection;
+    snakeSquare.row = nextRow;
+    snakeSquare.column = nextColumn;
+    repositionSquare(snakeSquare);
+  }
 
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
@@ -226,8 +226,12 @@ function hasCollidedWithSnake() {
   head and each part of the snake's body also knows its own row and column.
   
   */
+ if(snake.head === snake.body){
+return true
+ }else{
   
     return false;
+ }
 }
 
 function endGame() {
@@ -333,7 +337,13 @@ function getRandomAvailablePosition() {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
     spaceIsAvailable = true;
-
+for(var i = 0; i < spaceIsAvailable.length; i++){
+  if(spaceIsAvailable > randomPosition ){
+return false
+  }else{
+   return true
+  }
+}
     /*
     TODO 13: After generating the random position determine if that position is
     not occupied by a snakeSquare in the snake's body. If it is then set 

@@ -41,7 +41,7 @@ function runProgram() {
     if (event.which === KEY.UP || event.which === KEY.DOWN) walker.speedY = 0;
   }
   // one-time setup
-  var FRAMES_PER_SECOND_INTERVAL = 1000;
+  
 
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL); // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on("keydown", handleKeyDown);

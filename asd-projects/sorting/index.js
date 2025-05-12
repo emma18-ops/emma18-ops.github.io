@@ -14,16 +14,25 @@ The CSS ids you will work with are:
 ///////////////////////////////////////////////////////////////////////
 
 // TODO 2: Implement bubbleSort
+function bubbleSort(array){
+return;
 
+}
 
 // TODO 3: Implement quickSort
+function quickSort(array){
 
+}
 
 // TODOs 4 & 5: Implement partition
-
+function partition(array){
+return;
+}
 
 // TODO 1: Implement swap
-
+function swap(array){
+    return;
+}
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////// YOUR WORK GOES ABOVE HERE /////////////////////

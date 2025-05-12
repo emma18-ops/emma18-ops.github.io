@@ -20,8 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-
-  
+  applyFilter(reddify);
 
   // do not change the below line of code
   render($("#display"), image);
@@ -32,18 +31,29 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
+function applyFilter(filterFunction) {
+  for (var i = 0; i < image.length; i++) {
+    let t = [];
+    for (var j = 0; j < image[i].length; j++) {
+      t.push(image[i][j]);
+    }
+    og.push(t);
+  }
+}
 
 
 // TODO 7: Create the applyFilterNoBackground function
-
+function applyFilterNoBackground() {}
 
 // TODO 5: Create the keepInBounds function
-
+function keepInBounds() {}
 
 // TODO 3: Create reddify function
-
+function reddify(array) {
+  return Nothing ;
+}
 
 // TODO 6: Create more filter functions
-
+function filter() {}
 
 // CHALLENGE code goes below here

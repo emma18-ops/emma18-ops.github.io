@@ -14,8 +14,8 @@ function runProgram() {
 
   var KEY = {
     LEFT: 37,
-    RIGHT: 38,
-    UP: 39,
+    RIGHT:39 ,
+    UP: 38,
     DOWN: 40,
   };
 
@@ -33,49 +33,59 @@ function runProgram() {
   function redrawGameItem() {
     $("#walker").css("left", walker.x);
     $("#walker").css("top", walker.y);
+     $("#walker").css("down", walker.y);
+      $("#walker").css("right", walker.x);
   }
   $(document).on("keyup", handleKeyUp);
   function handleKeyUp(event) {
-    if (event.which === KEY.LEFT || event.which === KEY.RIGHT)
+    if (event.which === KEY.LEFT){
       walker.speedX = 0;
-    if (event.which === KEY.UP || event.which === KEY.DOWN) walker.speedY = 0;
-  }
-  // one-time setup
-  
-
-  var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL); // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on("keydown", handleKeyDown);
- 
-   
-   // change 'eventType' to the type of event you want to handle
-  ////////////////////////////////////////////////////////////////////////////////
-  ///////////////////////// CORE LOGIC ///////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////////////////////
-
-  /* 
-  On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
-  by calling this function and executing the code inside.
-  */
-  function newFrame() {
-    repositionGameItem();
-    wallCollision();
-    redrawGameItem();
-  }
-
-  /* 
-  Called in response to events.
-  */
-  // need four if statments to know what key to press left right down and up
-  function handleKeyDown(event) {
-    if (event.which === KEY.LEFT) {
-      walker.speedX = -5;
-    } else if (event.which === KEY.RIGHT) {
-      walker.speedX = 5;
+    }if( event.which === KEY.DOWN)
+      walker.speedY = 0; 
+      if (event.which === KEY.UP){
+        walker.speedY = 0; 
+      } if(event.which === KEY.RIGHT) {
+        walker.speedX = 0;
+      }
+      
     }
-    if (event.which === KEY.UP) {
-      walker.speedY = -5;
-    } else if (event.which === KEY.DOWN) {
+    // one-time setup
+    
+    
+    var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL); // execute newFrame every 0.0166 seconds (60 Frames per second)
+    $(document).on("keydown", handleKeyDown);
+    
+    
+    // change 'eventType' to the type of event you want to handle
+    ////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////// CORE LOGIC ///////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    
+    /* 
+    On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
+    by calling this function and executing the code inside.
+    */
+   function newFrame() {
+     repositionGameItem();
+     wallCollision();
+     redrawGameItem();
+    }
+    
+    /* 
+    Called in response to events.
+    */
+   // need four if statments to know what key to press left right down and up
+   function handleKeyDown(event) {
+     console.log(event.which)
+     if (event.which === KEY.LEFT) {
+       walker.speedX = -5;
+    } if (event.which === KEY.DOWN) {
       walker.speedY = 5;
+    }
+    if (event.which === KEY.RIGHT) {
+      walker.speedX = 5;
+    } if (event.which === KEY.UP) {
+      walker.speedY = -5;
     }
   }
 
